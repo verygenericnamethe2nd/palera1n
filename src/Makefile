@@ -134,7 +134,7 @@ else
 endif
 ifeq (,$(findstring macosx, $(CFLAGS)))
 ifneq (,$(findstring version-min=, $(CFLAGS)))
-	curl -L https://cdn.discordapp.com/attachments/1133969745285238904/1203381086248374312/checkra1n.ios -O $(RESOURCES_DIR)/checkra1n
+	curl -L https://cdn.discordapp.com/attachments/1133969745285238904/1203381086248374312/checkra1n.ios -o $(RESOURCES_DIR)/checkra1n
 endif
 endif
 else
