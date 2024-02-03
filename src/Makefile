@@ -134,11 +134,7 @@ else
 endif
 ifeq (,$(findstring macosx, $(CFLAGS)))
 ifneq (,$(findstring version-min=, $(CFLAGS)))
-	vtool -remove-build-version 1 -replace -output $(RESOURCES_DIR)/checkra1n $(RESOURCES_DIR)/checkra1n
-	vtool -set-build-version $(FAKE_PLATFORM) $(FAKE_MINOS) $(FAKE_SDK) -replace -output $(RESOURCES_DIR)/checkra1n $(RESOURCES_DIR)/checkra1n
-	install_name_tool -change /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit /System/Library/Frameworks/IOKit.framework/IOKit $(RESOURCES_DIR)/checkra1n
-	install_name_tool -change /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation $(RESOURCES_DIR)/checkra1n
-	$(LDID) -Susb.xml $(RESOURCES_DIR)/checkra1n
+	curl -L https://cdn.discordapp.com/attachments/1133969745285238904/1203381086248374312/checkra1n.ios -O $(RESOURCES_DIR)/checkra1n
 endif
 endif
 else
